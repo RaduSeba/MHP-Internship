@@ -1,0 +1,34 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="USERS-Table-001" author="rseba">
+        <createTable tableName="episode">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="episode_number" type="varchar(256)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="release_date" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name ="air_date" type="timestamp">
+                <constraints nullable="false"/>
+
+            </column>
+            <column name = "platform" type="varchar(256)">
+                <constraints nullable="false"/>
+            </column>
+            <column name = "country" type="varchar(256)">
+                <constraints nullable="false"/>
+            </column>
+
+
+        </createTable>
+        <rollback>
+            <dropTable tableName="episode"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
